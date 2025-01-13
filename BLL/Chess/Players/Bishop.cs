@@ -1,4 +1,5 @@
-﻿using BLL.Chess.Players;
+﻿using BLL.Chess;
+using BLL.Chess.Players;
 using BLL.Enums;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,7 @@ namespace BLL.Players
         public bool CanMove(int x, int y, int i, int j, Square[,] board, bool isCheck = false)
         {
             if (!isCheck) {
-                var king = new King(board[x, y].Player.Color);
-                var isNotThreatened = king.IsNotthreatened(x, y, i, j, board);
+                var isNotThreatened = ChessHelper.IsKingNotThreatened(x, y, i, j, board, board[x, y].Player.Color);
                 if (!isNotThreatened) return false;
             }
             var currentPlayer = board[x, y];

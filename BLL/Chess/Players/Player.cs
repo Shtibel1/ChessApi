@@ -34,7 +34,7 @@ namespace BLL.Players
 
         public bool CheckNotThreatened(int x, int y, int i, int j, Square[,] board, PlayerColor color)
         {
-            return ChessHelper.IsNotThreatened(x, y, i, j, board, color);
+            return ChessHelper.IsKingNotThreatened(x, y, i, j, board, color);
         }
     }
 }

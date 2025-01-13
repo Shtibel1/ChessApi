@@ -11,7 +11,7 @@ namespace BLL.Chess
 {
     public static class ChessHelper
     {
-        public static bool IsNotThreatened(int x, int y, int i, int j, Square[,] board, PlayerColor color)
+        public static bool IsKingNotThreatened(int x, int y, int i, int j, Square[,] board, PlayerColor color)
         {
             var kingX = 0;
             var kingY = 0;
@@ -34,7 +34,7 @@ namespace BLL.Chess
             {
                 for (int h = 0; h < 8; h++)
                 {
-                    if (newBoard[k, h]?.Player != null && newBoard[k, h].Player.Color != Color)
+                    if (newBoard[k, h]?.Player != null && newBoard[k, h].Player.Color != color)
                     {
                         if (newBoard[k, h].Player.CanMove(k, h, kingX, kingY, newBoard, true))
                         {
