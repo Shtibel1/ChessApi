@@ -16,7 +16,7 @@ namespace BLL.Chess
             var kingX = 0;
             var kingY = 0;
 
-            var newBoard = board[x, y].Player.Move(x, y, i, j, board);
+            var newBoard = MovePlayer(x, y, i, j, board);
 
             for (int k = 0; k < 8; k++)
             {
@@ -36,7 +36,7 @@ namespace BLL.Chess
                 {
                     if (newBoard[k, h]?.Player != null && newBoard[k, h].Player.Color != color)
                     {
-                        if (newBoard[k, h].Player.CanMove(k, h, kingX, kingY, newBoard, true))
+                        if (newBoard[k, h].Player.CanMove(k, h, kingX, kingY, newBoard))
                         {
                             return false;
                         }
@@ -44,6 +44,26 @@ namespace BLL.Chess
                 }
             }
             return true;
+        }
+
+        public static Square[,] MovePlayer(int x, int y, int i, int j, Square[,] board)
+        {
+            var newBoard = new Square[board.GetLength(0), board.GetLength(1)];
+            for (int row = 0; row < board.GetLength(0); row++)
+            {
+                for (int col = 0; col < board.GetLength(1); col++)
+                {
+                    newBoard[row, col] = new Square
+                    {
+                        Player = board[row, col].Player,
+                    };
+                }
+            }
+            var player = newBoard[x, y].Player;
+            newBoard[x, y].Player = null;
+            newBoard[i, j].Player = player;
+
+            return newBoard;
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Players
 {
-    public class Bishop : Player, IPlayer
+    public class Bishop : IPlayer
     {
         public PlayerColor Color { get; set; }
         public string? Img { get; set; }
@@ -28,12 +28,8 @@ namespace BLL.Players
             }
         }
 
-        public bool CanMove(int x, int y, int i, int j, Square[,] board, bool isCheck = false)
+        public bool CanMove(int x, int y, int i, int j, Square[,] board)
         {
-            if (!isCheck) {
-                var isNotThreatened = ChessHelper.IsKingNotThreatened(x, y, i, j, board, board[x, y].Player.Color);
-                if (!isNotThreatened) return false;
-            }
             var currentPlayer = board[x, y];
             if (Math.Abs(x - i) != Math.Abs(y - j)) return false;
             var dirX = x < i ? 1 : -1;

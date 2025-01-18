@@ -13,7 +13,6 @@ namespace BLL
         PlayerColor Color { get; set; }
         string? Img { get; set; }
         PlayerType Type { get; set; }
-        bool CanMove(int x, int y, int i, int j, Square[,] board, bool isCheck = false);
-        Square[,] Move(int x, int y, int i, int j, Square[,] board);
+        bool CanMove(int x, int y, int i, int j, Square[,] board);
     }
 }

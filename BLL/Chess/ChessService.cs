@@ -63,9 +63,11 @@ namespace BLL.Chess
         {
             if (Board[x, y]?.Player == null) return false;
             if (Board[x,y]?.Player?.Color == Board[i,j]?.Player?.Color) return false;
+            var isNotThreatened = ChessHelper.IsKingNotThreatened(x, y, i, j, Board, Board[x, y].Player.Color);
+            if (!isNotThreatened) return false;
             if (Board[x, y].Player.CanMove(x, y, i, j, Board))
             {
-                Board = Board[x, y].Player.Move(x, y, i, j, Board);
+                Board = ChessHelper.MovePlayer(x, y, i, j, Board);
                 return true;
             }
 
@@ -89,5 +91,7 @@ namespace BLL.Chess
 
             return jaggedArray;
         }
+
+        
     }
 }
