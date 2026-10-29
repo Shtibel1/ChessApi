@@ -30,6 +30,7 @@ namespace BLL.Players
 
         public bool CanMove(int x, int y, int i, int j, Square[,] board)
         {
+            if (x == i && y == j) return false;
             var currentPlayer = board[x, y];
             if (Math.Abs(x - i) != Math.Abs(y - j)) return false;
             var dirX = x < i ? 1 : -1;
