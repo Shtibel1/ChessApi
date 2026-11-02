@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessApi", "ChessApi\ChessA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{8CCC1991-09A3-4979-B599-45521054A938}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL.Tests", "BLL.Tests\BLL.Tests.csproj", "{FCB0D4AB-E423-4E7D-BBD9-C202D8DEFE51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8CCC1991-09A3-4979-B599-45521054A938}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CCC1991-09A3-4979-B599-45521054A938}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CCC1991-09A3-4979-B599-45521054A938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB0D4AB-E423-4E7D-BBD9-C202D8DEFE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB0D4AB-E423-4E7D-BBD9-C202D8DEFE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB0D4AB-E423-4E7D-BBD9-C202D8DEFE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB0D4AB-E423-4E7D-BBD9-C202D8DEFE51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

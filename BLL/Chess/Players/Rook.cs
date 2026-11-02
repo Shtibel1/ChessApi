@@ -29,6 +29,7 @@ namespace BLL.Players
         }
         public bool CanMove(int x, int y, int i, int j, Square[,] board)
         {
+            if (x == i && y == j) return false;
             if (x != i && y != j) return false;
             if (x == i)
             {
